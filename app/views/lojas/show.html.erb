@@ -1,0 +1,57 @@
+<div class="panel panel-default col-sm-12">
+  <!-- Default panel contents -->
+    <div class="panel-heading"><center><h1>Loja: <%= @loja.descricao %></h1></center></div>
+      <span class="col-sm-5">
+        <p>
+          <%= image_tag @loja.image.url(:medium) %>
+        </p>
+        <p class="form-control">
+          <strong>Descricao:</strong>
+          <%= @loja.descricao %>
+        </p>
+
+        <p class="form-control">
+          <strong>Telefone:</strong>
+          <%= @loja.telefone %>
+        </p>
+
+        <p class="form-control">
+          <strong>Rua:</strong>
+          <%= @loja.rua %>
+        </p>
+
+        <p class="form-control">
+          <strong>Numero:</strong>
+          <%= @loja.numero %>
+        </p>
+
+        <p class="form-control">
+          <strong>Cep:</strong>
+          <%= @loja.cep %>
+        </p>
+
+        <p class="form-control">
+          <strong>Complemento:</strong>
+          <%= @loja.complemento %>
+        </p>
+
+        <p class="form-control">
+          <strong>Bairro:</strong>
+          <%= @loja.bairro %>
+        </p>
+
+        <p class="form-control">
+          <strong>Cidade:</strong>
+          <%= @loja.cidade %>
+        </p>
+
+        <p class="form-control">
+          <strong>Estado:</strong>
+          <%= @loja.estado %>
+        </p>
+      </span>
+    </div>
+</div>
+
+<%= link_to 'Editar', edit_loja_path(@loja), :class => 'btn btn-primary' %> 
+<%= link_to 'Voltar', lojas_path, :class => 'btn btn-default' %>

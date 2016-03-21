@@ -1,0 +1,60 @@
+<%= form_for @loja, html: { multipart: true } do |f| %>
+  <% if @loja.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@loja.errors.count, "error") %> prohibited this loja from being saved:</h2>
+
+      <ul>
+      <% @loja.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_field :descricao, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :telefone %><br>
+    <%= f.text_field :telefone, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :rua %><br>
+    <%= f.text_field :rua, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :numero %><br>
+    <%= f.number_field :numero, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :cep %><br>
+    <%= f.text_field :cep, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :complemento %><br>
+    <%= f.text_field :complemento, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :bairro %><br>
+    <%= f.text_field :bairro, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :cidade %><br>
+    <%= f.text_field :cidade, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.text_field :estado, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= image_tag @loja.image.url(:medium) %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, :class => 'btn btn-warning' %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Salvar', :class => 'btn btn-success' %>
+  </div>
+<% end %>

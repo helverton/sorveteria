@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Cardápios</div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Imagem</th>
+          <th>Opções</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @cardapios.each do |cardapio| %>
+          <tr>
+            <td><%= cardapio.descricao %></td>
+            <td><%= image_tag cardapio.image.url(:thumb) %></td>
+            <td>
+              <%= link_to 'Detalhes', cardapio, :class => 'btn btn-primary' %>
+              <%= link_to 'Editar', edit_cardapio_path(cardapio), :class => 'btn btn-primary' %>
+              <%= link_to 'Excluir', cardapio, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, :class => 'btn btn-danger'%>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%= link_to 'Novo cardapio', new_cardapio_path, :class => 'btn btn-success' %>

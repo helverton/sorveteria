@@ -1,0 +1,32 @@
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <% @cardapios.each do |cardapio| %>
+          <div class="col-lg-12 col-md-4 col-xs-6">
+            <div class="panel panel-default">
+              <div class="panel-heading"><center><h3><%= cardapio.descricao %></h3></center></div>
+                <span class="thumbnail" href="#">
+                    <%= image_tag cardapio.image.url(:larg) %>
+                </span>
+              </div>
+            </div>
+          </div>
+          </hr>
+        <% end %> 
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; HSantos 2015</p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<!-- /.container -->

@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Cardápios</div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Imagem</th>
+          <th>Descricao</th>
+          <th>Telefone</th>
+          <th>Rua</th>
+          <th>Numero</th>
+          <th>Cep</th>
+          <th>Complemento</th>
+          <th>Bairro</th>
+          <th>Cidade</th>
+          <th>Estado</th>
+          <th>Opções</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @lojas.each do |loja| %>
+          <tr>
+            <td><%= image_tag loja.image.url(:medium) %></td>
+            <td><%= loja.descricao %></td>
+            <td><%= loja.telefone %></td>
+            <td><%= loja.rua %></td>
+            <td><%= loja.numero %></td>
+            <td><%= loja.cep %></td>
+            <td><%= loja.complemento %></td>
+            <td><%= loja.bairro %></td>
+            <td><%= loja.cidade %></td>
+            <td><%= loja.estado %></td>
+            <td>
+              <%= link_to 'Detalhes', loja, :class => 'btn btn-primary' %>
+              <%= link_to 'Editar', edit_loja_path(loja), :class => 'btn btn-primary' %>
+              <%= link_to 'Excluir', loja, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, :class => 'btn btn-danger'%>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%= link_to 'Nova loja', new_loja_path, :class => 'btn btn-success' %>

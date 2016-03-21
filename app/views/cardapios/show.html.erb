@@ -1,0 +1,8 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><center><h1>Cardápio: <%= @cardapio.descricao %></h1></center></div>
+  <%= image_tag @cardapio.image.url(:medium) %>
+</div>
+
+<%= link_to 'Editar', edit_cardapio_path(@cardapio), :class => 'btn btn-primary' %> 
+<%= link_to 'Voltar', cardapios_path, :class => 'btn btn-default' %>

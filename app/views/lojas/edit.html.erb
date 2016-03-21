@@ -1,0 +1,10 @@
+<div class="panel panel-default col-sm-12">
+  <!-- Default panel contents -->
+  	<div class="panel-heading"><center><h1>Editar loja: <%= @loja.id %></h1></center></div>
+  		<span class="col-sm-5">
+  			<%= render 'form' %>
+  		</span>
+	</div>
+	<%= link_to 'Detalhes', @loja, :class => "btn btn-primary" %> 
+	<%= link_to 'Voltar', lojas_path, :class => "btn btn-default" %>
+</div>
