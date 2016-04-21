@@ -1,6 +1,8 @@
 <%# add navigation links to this file %>
+<% if (!current_user) %>
 <li><%= link_to 'Sobre', page_path('sobre') %></li>
 <li><%= link_to 'Cardápios', page_path('cardapios') %></li>
 <li><%= link_to 'Contato', page_path('contato') %></li>
+<% end %>
 
 
